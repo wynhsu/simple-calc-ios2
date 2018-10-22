@@ -58,6 +58,7 @@
                         <viewLayoutGuide key="safeArea" id="PxF-gn-TqI"/>
                     </view>
                     <connections>
+                        <outlet property="contentView" destination="LvT-h3-qIN" id="TNd-v8-Qq6"/>
                         <outlet property="historyScrollView" destination="dIm-ca-Jd2" id="9Gw-El-qCW"/>
                         <outlet property="historyTitle" destination="psm-Df-PBA" id="oB6-Dj-wcM"/>
                     </connections>
