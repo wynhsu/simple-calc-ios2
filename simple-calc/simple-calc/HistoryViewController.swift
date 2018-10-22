@@ -9,14 +9,13 @@
 import UIKit
 
 class HistoryViewController: UIViewController {
-    var historyArr: [String] = []
+    let historyArr = UserDefaults.standard.object(forKey: "historyArray") as! [String]
 
     @IBOutlet weak var historyTitle: UILabel!
     @IBOutlet weak var historyScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         renderHistory(width: Int(UIScreen.main.bounds.width))
         // Do any additional setup after loading the view.
     }

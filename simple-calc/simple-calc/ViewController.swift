@@ -89,15 +89,21 @@ class ViewController: UIViewController {
         }
         let resultToAdd = outputString.text! + "=" + String(result)
         eqArr.append(resultToAdd)
+        storeArr()
         output.text! = String(result)
         outputString.text! = ""
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is HistoryViewController {
-            let vc = segue.destination as? HistoryViewController
-            vc?.historyArr = eqArr
-        }
+    private func storeArr() {
+        let storage = UserDefaults.standard
+        storage.set(eqArr, forKey: "historyArray")
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.destination is HistoryViewController {
+//            let vc = segue.destination as? HistoryViewController
+//            vc?.historyArr = eqArr
+//        }
+//    }
 }
 
