@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var eqArr: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,8 +87,17 @@ class ViewController: UIViewController {
                 result = 0
             }
         }
+        let resultToAdd = outputString.text! + "=" + String(result)
+        eqArr.append(resultToAdd)
         output.text! = String(result)
         outputString.text! = ""
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is HistoryViewController {
+            let vc = segue.destination as? HistoryViewController
+            vc?.historyArr = eqArr
+        }
     }
 }
 

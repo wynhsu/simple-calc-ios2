@@ -9,10 +9,30 @@
 import UIKit
 
 class HistoryViewController: UIViewController {
+    var historyArr: [String] = []
 
+    @IBOutlet weak var historyTitle: UILabel!
+    @IBOutlet weak var historyScrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(historyArr)
+        var yAxis = 60
+//        var prevLabel: UILabel
+        for eq in historyArr.reversed() {
+            let line = UILabel()
+//            line.translatesAutoresizingMaskIntoConstraints = false
+//            line.topAnchor.constraint(equalTo: historyTitle.bottomAnchor, constant: 8).isActive = true
+            line.frame = CGRect(x: 0, y: yAxis, width: Int(historyScrollView.frame.width), height: 60)
+            line.text = eq
+            line.textAlignment = NSTextAlignment.center
+            line.textColor = UIColor.white
+            line.backgroundColor = UIColor(displayP3Red: 65.0, green: 58.0, blue: 104.0, alpha: 0.08)
+            self.historyScrollView.addSubview(line)
+//            prevLabel = line
+            yAxis += 63
+        }
+        
         // Do any additional setup after loading the view.
     }
     
