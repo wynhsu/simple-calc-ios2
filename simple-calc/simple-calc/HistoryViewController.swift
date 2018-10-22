@@ -12,34 +12,37 @@ class HistoryViewController: UIViewController {
     var historyArr: [String] = []
 
     @IBOutlet weak var historyTitle: UILabel!
-    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var historyScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(historyArr)
-        var yAxis = 60
-//        var prevLabel: UILabel
+        
+        renderHistory(width: Int(UIScreen.main.bounds.width))
+        // Do any additional setup after loading the view.
+    }
+    
+    private func renderHistory(width: Int) {
+        var yAxis = 0
         var contRect = CGRect.zero
         for eq in historyArr.reversed() {
-            let line = UILabel()
-//            line.translatesAutoresizingMaskIntoConstraints = false
-//            line.topAnchor.constraint(equalTo: historyTitle.bottomAnchor, constant: 8).isActive = true
-            line.frame = CGRect(x: 0, y: yAxis, width: Int(contentView.frame.width), height: 60)
+            let line = UILabel(frame: CGRect(x: 0, y: yAxis, width: width, height: 60))
             line.text = eq
             line.textAlignment = NSTextAlignment.center
             line.textColor = UIColor.white
             line.backgroundColor = UIColor(displayP3Red: 65.0, green: 58.0, blue: 104.0, alpha: 0.08)
-            self.contentView.addSubview(line)
-//            prevLabel = line
+            self.historyScrollView.addSubview(line)
             yAxis += 63
             contRect = contRect.union(line.frame)
         }
         historyScrollView.contentSize = contRect.size
-        // Do any additional setup after loading the view.
     }
     
-
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        for view in historyScrollView.subviews {
+            view.removeFromSuperview()
+        }
+        renderHistory(width: Int(size.width))
+    }
     /*
     // MARK: - Navigation
 

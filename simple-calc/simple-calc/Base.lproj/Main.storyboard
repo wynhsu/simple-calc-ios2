@@ -18,47 +18,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dIm-ca-Jd2">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LvT-h3-qIN">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Calculations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psm-Df-PBA">
-                                                <rect key="frame" x="16" y="20" width="206.5" height="29"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <color key="textColor" white="1" alpha="0.70095783390410993" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.25490196079999999" green="0.2274509804" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstItem="psm-Df-PBA" firstAttribute="top" secondItem="LvT-h3-qIN" secondAttribute="top" constant="20" id="dyy-cg-pcJ"/>
-                                            <constraint firstItem="psm-Df-PBA" firstAttribute="leading" secondItem="LvT-h3-qIN" secondAttribute="leading" constant="16" id="xBi-zW-IPc"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
+                                <rect key="frame" x="0.0" y="121" width="375" height="546"/>
                                 <color key="backgroundColor" red="0.25490196079999999" green="0.2274509804" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstItem="LvT-h3-qIN" firstAttribute="top" secondItem="dIm-ca-Jd2" secondAttribute="top" id="BrW-qt-3UV"/>
-                                    <constraint firstItem="LvT-h3-qIN" firstAttribute="height" secondItem="dIm-ca-Jd2" secondAttribute="height" priority="250" id="F4m-dj-PAZ"/>
-                                    <constraint firstAttribute="bottom" secondItem="LvT-h3-qIN" secondAttribute="bottom" id="Mml-0c-ls3"/>
-                                    <constraint firstAttribute="trailing" secondItem="LvT-h3-qIN" secondAttribute="trailing" id="XC3-2U-xyA"/>
-                                    <constraint firstItem="LvT-h3-qIN" firstAttribute="leading" secondItem="dIm-ca-Jd2" secondAttribute="leading" id="ZrT-vb-HwH"/>
-                                    <constraint firstItem="LvT-h3-qIN" firstAttribute="width" secondItem="dIm-ca-Jd2" secondAttribute="width" id="oAf-oK-G8m"/>
-                                </constraints>
                             </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recent Calculations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psm-Df-PBA">
+                                <rect key="frame" x="16" y="84" width="206.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="0.70095783390410993" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.25490196079999999" green="0.2274509804" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="dIm-ca-Jd2" firstAttribute="bottom" secondItem="PxF-gn-TqI" secondAttribute="bottom" id="3Gj-qB-bVa"/>
-                            <constraint firstItem="dIm-ca-Jd2" firstAttribute="top" secondItem="PxF-gn-TqI" secondAttribute="top" id="G74-xh-Ofb"/>
+                            <constraint firstItem="psm-Df-PBA" firstAttribute="top" secondItem="PxF-gn-TqI" secondAttribute="top" constant="20" id="3nX-gn-hpW"/>
+                            <constraint firstItem="dIm-ca-Jd2" firstAttribute="width" secondItem="Oum-fv-VvW" secondAttribute="width" id="OG0-J5-v5T"/>
                             <constraint firstItem="dIm-ca-Jd2" firstAttribute="trailing" secondItem="PxF-gn-TqI" secondAttribute="trailing" id="Xtx-QL-M40"/>
+                            <constraint firstItem="psm-Df-PBA" firstAttribute="leading" secondItem="Oum-fv-VvW" secondAttribute="leading" constant="16" id="eNg-US-z33"/>
+                            <constraint firstItem="dIm-ca-Jd2" firstAttribute="top" secondItem="psm-Df-PBA" secondAttribute="bottom" constant="8" id="mwf-LW-Uba"/>
                             <constraint firstItem="dIm-ca-Jd2" firstAttribute="leading" secondItem="PxF-gn-TqI" secondAttribute="leading" id="qoo-LF-Au3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PxF-gn-TqI"/>
                     </view>
                     <connections>
-                        <outlet property="contentView" destination="LvT-h3-qIN" id="TNd-v8-Qq6"/>
                         <outlet property="historyScrollView" destination="dIm-ca-Jd2" id="9Gw-El-qCW"/>
                         <outlet property="historyTitle" destination="psm-Df-PBA" id="oB6-Dj-wcM"/>
                     </connections>
